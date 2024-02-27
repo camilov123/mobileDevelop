@@ -1,4 +1,4 @@
-import 'dart:math';
+//import 'dart:math';
 
 /*Print number from 1 to 100.
 if is mult of 3 print fizz
@@ -30,7 +30,7 @@ fizzBuzz(a) {
   if (a % 5 == 0) print("Buzz");
 }*/
 
-anagrama(String string1, String string2) {
+/*anagrama(String string1, String string2) {
   var word1 = string1.toLowerCase().split("");
   word1.sort();
   var word2 = string2.toLowerCase().split("");
@@ -40,12 +40,12 @@ anagrama(String string1, String string2) {
   } else {
     print(string1 + " is has the same letter to " + string2);
   }
-}
+}*/
 
 void main() {
   //temporal(0);
 
-  anagrama("castor", "castro");
+  //anagrama("castor", "castro");
 
   /*for (var i = 0; i <= 100; i++) {
     print(fizzBuzz(i));
@@ -57,7 +57,27 @@ void main() {
   var b = 'This is a text';
   var c = 'This is a text';
   print(a + d);*/
-  List<int> temp = [1, 5, 3, 10, 2];
+  /*List<int> temp = [1, 5, 3, 10, 2];
   print("maximum ${temp.reduce(max)}");
   print("minimum ${temp.reduce(min)}");
+
+  const String nombre = "Cristian";
+  const String temporal = "temporal";
+  dynamic numero = '';
+  numero = 12;
+  print("""
+  $numero
+  $temporal
+  $nombre
+  """);
+  print("mi nombr es ${nombre.toUpperCase()}");*/
+
+  final Map<String, dynamic> persona = {
+    'nombre': 'Cristian',
+    'apellido': 'Afanador',
+    'edad': 30,
+    'vivo': true
+  };
+
+  print(persona);
 }
