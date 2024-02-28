@@ -163,11 +163,13 @@ class Cuadrado {
   }
 }*/
 
-void main() async {
+/*void main() async {
   print("INICIO");
   try {
     final pet = await httpGet('lorem ipsum');
     print(pet);
+  } on Exception {
+    print("Error tipo exception");
   } catch (err) {
     print("error $err");
   } finally {
@@ -185,4 +187,25 @@ Future<String> httpGet(String url) async {
   return "llegué";
   /*  throw "Error";
     return "respuesta";*/
+}*/
+void main() {
+  emitirNumeros().listen((event) {
+    print("Stream $event");
+  });
+}
+
+/*Stream<int> emitirNumeros() {
+  return Stream.periodic(const Duration(seconds: 1), (value) {
+    return value;
+  }).take(5);
+}*/
+Stream<int> emitirNumeros() async* {
+  final valorEmitir = [1, 2, 3, 4, 5];
+  for (int i in valorEmitir) {
+    await Future.delayed(const Duration(seconds: 1));
+    yield i;
+  }
+  /*return Stream.periodic(const Duration(seconds: 1), (value) {
+    return value;
+  }).take(5);*/
 }
