@@ -42,22 +42,22 @@ fizzBuzz(a) {
   }
 }*/
 
-void main() {
-  //temporal(0);
+//void main() {
+//temporal(0);
 
-  //anagrama("castor", "castro");
+//anagrama("castor", "castro");
 
-  /*for (var i = 0; i <= 100; i++) {
+/*for (var i = 0; i <= 100; i++) {
     print(fizzBuzz(i));
   }*/
-  /*const z = 50;
+/*const z = 50;
   final v = 60;
   var a = 2;
   var d = 3;
   var b = 'This is a text';
   var c = 'This is a text';
   print(a + d);*/
-  /*List<int> temp = [1, 5, 3, 10, 2];
+/*List<int> temp = [1, 5, 3, 10, 2];
   print("maximum ${temp.reduce(max)}");
   print("minimum ${temp.reduce(min)}");
 
@@ -72,7 +72,7 @@ void main() {
   """);
   print("mi nombr es ${nombre.toUpperCase()}");*/
 
-  /*final Map<String, dynamic> persona = {
+/*final Map<String, dynamic> persona = {
     'nombre': 'Cristian',
     'Apellido': 'Afanador',
     'edad': 30,
@@ -88,7 +88,7 @@ void main() {
   print(persona["Apellido"]);
   print(persona["foto"][2]);*/
 
-  final List<int> number = [1, 2, 3, 5, 4, 4, 4, 6, 5, 8, 7];
+/*final List<int> number = [1, 2, 3, 5, 4, 4, 4, 6, 5, 8, 7];
   print(number);
   print("Tamaño del arrego ${number.length}");
   print("Primero ${number[0]}");
@@ -97,5 +97,92 @@ void main() {
 
   final contrario = number.reversed;
   print(contrario.toList());
-  print(contrario.toSet());
+  print(contrario.toSet());*/
+//print(saludo());
+//print(saludo_dos());
+//print(suma_dos_numeros(1, 6));
+//print(suma_dos_numeros(a: 1));
+/*final per = Persona(nombre: 'Andres', apellido: 'Delgado');
+
+  final p = {"nombre": 'Cristian', "apellidos": 'pere'};
+
+  final perso = Persona.fromJson(p);
+  print(perso.nombre);
+  print(perso.apellido);*/
+//}
+
+/*String saludo() {
+  return "Hola";
+}
+
+String saludo_dos() => "Hola x2";
+
+/*int suma_dos_numeros(int a, [int b = 0]) {
+  return a + b;
+}*/
+int suma_dos_numeros({required int a, int b = 0}) {
+  return a + b;
+}*/
+
+/*class Persona {
+  String nombre;
+  String apellido;
+
+  /*Persona(String n_nombre, String n_apellido)
+      : nombre = n_nombre,
+        apellido = n_apellido;*/
+
+  Persona({required this.nombre, required this.apellido});
+  Persona.fromJson(Map<String, dynamic> json)
+      : nombre = json["nombre"] ?? 'No hay nombre',
+        apellido = json["apellido"] ?? 'No hay apellido';
+  @override
+  String toString() {
+    return "Esto es la clase";
+  }
+}*/
+
+/*void main() {
+  final square = Cuadrado(lado: 5);
+  print(square);
+  square._lado = -5.0;
+  print(square._lado);
+}
+
+class Cuadrado {
+  double _lado;
+
+  Cuadrado({required double lado}) : _lado = lado;
+
+  set lado(double value) {
+    _lado = value;
+  }
+
+  double area_cuadrado() {
+    return _lado * _lado;
+  }
+}*/
+
+void main() async {
+  print("INICIO");
+  try {
+    final pet = await httpGet('lorem ipsum');
+    print(pet);
+  } catch (err) {
+    print("error $err");
+  } finally {
+    print("Siempre");
+  }
+  /*httpGet('Sample text')
+      .then((value) => {print(value)})
+      .catchError((err) => {print("Este es el error $err")});*/
+  print("FINAL");
+}
+
+Future<String> httpGet(String url) async {
+  await Future.delayed(const Duration(seconds: 3));
+  throw Exception("Error");
+  return "llegué";
+  /*  throw "Error";
+    return "respuesta";*/
 }
