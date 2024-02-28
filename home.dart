@@ -72,12 +72,30 @@ void main() {
   """);
   print("mi nombr es ${nombre.toUpperCase()}");*/
 
-  final Map<String, dynamic> persona = {
+  /*final Map<String, dynamic> persona = {
     'nombre': 'Cristian',
-    'apellido': 'Afanador',
+    'Apellido': 'Afanador',
     'edad': 30,
-    'vivo': true
+    'vivo': true,
+    'foto': <int, String>{
+      1: 'foto_1.jpg',
+      2: 'foto_1.jpg',
+    }
   };
 
   print(persona);
+  print(persona["nombre"]);
+  print(persona["Apellido"]);
+  print(persona["foto"][2]);*/
+
+  final List<int> number = [1, 2, 3, 5, 4, 4, 4, 6, 5, 8, 7];
+  print(number);
+  print("Tamaño del arrego ${number.length}");
+  print("Primero ${number[0]}");
+  print("Primero ${number.first}");
+  print("último ${number.last}");
+
+  final contrario = number.reversed;
+  print(contrario.toList());
+  print(contrario.toSet());
 }
